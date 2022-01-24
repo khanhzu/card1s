@@ -1,0 +1,55 @@
+Header set Access-Control-Allow-Origin *
+
+Options All -Indexes
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+RewriteEngine On
+RewriteRule ^account/login$ pages/account/login.php [L]
+RewriteRule ^account/register$ pages/account/register.php [L]
+RewriteRule ^account/logout$ pages/account/logout.php [L]
+RewriteRule ^account/profile$ pages/account/profile.php [L]
+RewriteRule ^account/change-password$ pages/account/change-password.php [L]
+RewriteRule ^account/security$ pages/account/security.php [L]
+RewriteRule ^account/security/2fa-auth$ pages/account/security/2fa-auth.php [L]
+RewriteRule ^account/security/verify$ pages/account/security/verify.php [L]
+RewriteRule ^account/banned$ pages/account/banned.php [L]
+
+# API
+RewriteRule ^api/send-card$ api/send-card.php [L]
+RewriteRule ^api-docs$ pages/client/api-docs.php [L]
+
+# ADMIN - QUẢN TRỊ VIÊN
+RewriteRule ^admin$ /pages/admin/index.php [L]
+RewriteRule ^admin/update$ pages/admin/update.php [L]
+RewriteRule ^admin/list/member$ pages/admin/list/member.php [L]
+RewriteRule ^admin/list/card$ pages/admin/list/card.php [L]
+RewriteRule ^admin/list/buy-card$ pages/admin/list/buy-card.php [L]
+RewriteRule ^admin/list/topup$ pages/admin/list/topup.php [L]
+RewriteRule ^admin/list/withdraw$ pages/admin/list/withdraw.php [L]
+RewriteRule ^admin/list/partner$ pages/admin/list/partner.php [L]
+RewriteRule ^admin/list/transfer$ pages/admin/list/transfer.php [L]
+RewriteRule ^admin/administrator/bank$ pages/admin/administrator/bank.php [L]
+RewriteRule ^admin/administrator/setting-website$ pages/admin/administrator/setting-website.php [L]
+RewriteRule ^admin/administrator/setting-rate$ pages/admin/administrator/setting-rate.php [L]
+RewriteRule ^admin/administrator/setting-ex-card$ pages/admin/administrator/setting-ex-card.php [L]
+RewriteRule ^admin/administrator/setting-buy-topup-card$ pages/admin/administrator/setting-buy-topup-card.php [L]
+RewriteRule ^admin/administrator/setting-withdraw$ pages/admin/administrator/setting-withdraw.php [L]
+RewriteRule ^admin/administrator/setting-transfer$ pages/admin/administrator/setting-transfer.php [L]
+RewriteRule ^admin/administrator/setting-nofication$ pages/admin/administrator/setting-nofication.php [L]
+RewriteRule ^admin/administrator/setting-security$ pages/admin/administrator/setting-security.php [L]
+
+# CLIENT - KHÁCH HÀNG
+RewriteRule ^buy-card$ pages/client/buy-card.php [L]
+RewriteRule ^view-card/([A-Za-z0-9-]+) pages/client/view-card.php?order_code=$1 [L]
+RewriteRule ^topup$ pages/client/topup.php [L]
+RewriteRule ^transfer$ pages/client/transfer.php [L]
+RewriteRule ^withdraw$ pages/client/withdraw.php [L]
+RewriteRule ^partner$ pages/client/partner.php [L]
+RewriteRule ^recharge$ pages/client/recharge.php [L]
+RewriteRule ^history/buy-card$ pages/client/history/buy-card.php [L]
+RewriteRule ^history/ex-card$ pages/client/history/ex-card.php [L]
+RewriteRule ^rank$ pages/client/rank.php [L]
+RewriteRule ^code$ pages/client/codevip.php [L]

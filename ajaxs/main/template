@@ -1,0 +1,18 @@
+<?php
+    require('../../../../core/database.php');
+    require('../../../../core/function.php');
+    
+    if($JTech->checkToken('request')){
+        $bank_name = xss($_POST['bank_name']);
+        $owner = xss($_POST['owner']);
+        $number_account = xss($_POST['number_account']);
+        $branch = xss($_POST['branch']);
+
+        $validate = validateForm(['bank_name', 'owner', 'number_account', 'branch']);
+
+        if($validate) {
+            
+        }
+    }else{
+        die(jsonResponse(login_required, false));
+    }
